@@ -1,0 +1,237 @@
+INSERT INTO INSTRUCTOR (ssn, iname, rankk, baseSalary, extraSalary, dName)  
+VALUES 
+('123456789', 'Michael Scott', 'Professor', 75000.00, 5000.00, 'Computer Science'),
+('234567890', 'Dwight Schrute', 'Associate Professor', 65000.00, 2500.00, 'Mathematics'),
+('345678901', 'Jim Halpert', 'Assistant Professor', 55000.00, 1000.00, 'Political Science'),
+('456789012', 'Pam Beesly', 'Lecturer', 45000.00, NULL, 'English'),
+('567890123', 'Ryan Howard', 'Professor', 80000.00, 7500.00, 'Business'),
+('678901234', 'Stanley Hudson', 'Associate Professor', 70000.00, 5000.00, 'Economics'),
+('789012345', 'Angela Martin', 'Assistant Professor', 60000.00, 2000.00, 'Chemistry'),
+('890123456', 'Oscar Martinez', 'Lecturer', 50000.00, NULL, 'History'),
+('901234567', 'Kevin Malone', 'Professor', 85000.00, 10000.00, 'Physics'),
+('012345678', 'Toby Flenderson', 'Associate Professor', 75000.00, 5000.00, 'Biology');
+
+INSERT INTO DEPARTMENT (dName, budget, headSSn, buildingName) 
+VALUES
+('Computer Science', 1000000.00, '123456789', 'AMF'),
+('Mathematics', 800000.00, '234567890', 'DMF'),
+('Political Science', 700000.00, '345678901', 'Education'),
+('English', 600000.00, '456789012', 'SFL'),
+('Business', 1200000.00, '567890123', 'LMF'),
+('Economics', 900000.00, '678901234', 'Business'),
+('Chemistry', 1000000.00, '789012345', 'Engineering'),
+('History', 800000.00, '890123456', 'Humanities'),
+('Physics', 1100000.00, '901234567', 'LAB'),
+('Biology', 950000.00, '012345678', 'Science');
+
+INSERT INTO BUILDCLASS (buildingName, roomNumber, capacity)  
+VALUES  
+('AMF', 'Z10', '25'),
+('DMF', '414', '30'),
+('LMF', '102', '35'),
+('SFL', '101', '40'),
+('LAB', '322', '20'),
+('Education', '301', '25'),
+('Humanities', '301', '40'),
+('Business', '201', '35'),
+('Science', '101', '30'),
+('Engineering', '401', '25');
+
+INSERT INTO PROJECT (leadSSn, prName, startDate, endDate, subject, contrDName)  
+VALUES 
+('123456789', 'Dart Game', '2023-05-13', '2023-08-13', 'Game Development', 'Computer Science'),
+('234567890', 'Hazine Avı', '2023-05-15', '2023-08-15', 'Education', 'Mathematics'),
+('345678901', 'Voting System', '2023-05-17', '2023-08-17', 'Political Science', 'Political Science'),
+('456789012', 'Poetry Anthology', '2023-05-19', '2023-08-19', 'Creative Writing', 'English'),
+('567890123', 'E-commerce Platform', '2023-05-21', '2023-08-21', 'Business', 'Business'),
+('678901234', 'Stock Market Analysis', '2023-05-23', '2023-08-23', 'Economics', 'Economics'),
+('789012345', 'Litmus Paper Experiment', '2023-05-25', '2023-08-25', 'Chemistry', 'Chemistry'),
+('890123456', 'Vatan Yahut Silistre Play', '2023-05-27', '2023-08-27', 'History', 'History'),
+('901234567', 'Circuitverse Karnaugh Map', '2023-05-29', '2023-08-29', 'Physics', 'Physics'),
+('012345678', 'Bean Cotton Experiment', '2023-05-31', '2023-08-31', 'Biology', 'Biology');
+
+INSERT INTO INSTRINPROJECTS (PrjleadSsn, prName, issn, workingHours)  
+VALUES  
+('123456789', 'Dart Game', '123456789', 10),
+('234567890', 'Hazine Avı', '234567890', 15),
+('345678901', 'Voting System', '345678901', 20),
+('456789012', 'Poetry Anthology', '456789012', 5),
+('567890123', 'E-commerce Platform', '567890123', 12),
+('678901234', 'Stock Market Analysis', '678901234', 18),
+('789012345', 'Litmus Paper Experiment', '789012345', 8),
+('890123456', 'Vatan Yahut Silistre Play', '890123456', 7),
+('901234567', 'Circuitverse Karnaugh Map', '901234567', 9),
+('012345678', 'Bean Cotton Experiment', '012345678', 6);
+
+INSERT INTO STUDENT (sssn, gradorUgrad, advisorSsn, currCode, dName, studentId, sName)  
+VALUES 
+('111111111', 'UGrad', '123456789', '1Dcbh3FE6t2L', 'Computer Science', '21COMP1013', 'Erdem Önal'),
+('222222222', 'Grad', '234567890', 'qWtow8bfuP89', 'Mathematics', '21SOFT1048', 'Ahmet Emre Çakmak'),
+('333333333', 'UGrad', '345678901', 'MHdW319WbS4w', 'Political Science', '21SOFT1016', 'Kayra Cansın Gökmen'),
+('444444444', 'Grad', '456789012', 'GkRa2UpZTW85', 'English', '21SOFT1021', 'Anıl Erdal'),
+('555555555', 'UGrad', '567890123', '54S89uZinwuN', 'Business', '19BMED1009', 'Aylin Koç'),
+('666666666', 'Grad', '678901234', 'I4sh2AbL2Np1', 'Economics', '21COMP1011', 'Ayşe Korkut'),
+('777777777', 'UGrad', '789012345', '7yKNVp4F1rlP', 'Chemistry', '19BMED1004', 'Hazar Aydın'),
+('888888888', 'Grad', '890123456', '9BJb0qxfp26z', 'History', '19CIVL2017', 'Beytullah Emre Kavak'),
+('999999999', 'UGrad', '901234567', 'lW55L7X09aXr', 'Physics', '218ME2231', 'Yekta Baran Şahin'),
+('999998888', 'Grad', '012345678', '4qRq2Ram6OHS', 'Biology', '217CS2237', 'Mustafa Kurban');
+
+INSERT INTO CURRICULA (currCode, gradOrUGrad, dName)   
+VALUES 
+('1Dcbh3FE6t2L', 'UGrad', 'Computer Science'),
+('qWtow8bfuP89', 'Grad', 'Mathematics'),
+('MHdW319WbS4w', 'UGrad', 'Political Science'),
+('GkRa2UpZTW85', 'Grad', 'English'),
+('54S89uZinwuN', 'UGrad', 'Business'),
+('I4sh2AbL2Np1', 'Grad', 'Economics'),
+('7yKNVp4F1rlP', 'UGrad', 'Chemistry'),
+('9BJb0qxfp26z', 'UGrad', 'History'),
+('lW55L7X09aXr', 'Grad', 'Physics'),
+('4qRq2Ram6OHS', 'UGrad', 'Biology');
+
+INSERT INTO GRADSTUDENT (sssn, advisorSsn)   
+VALUES 
+('222222222', '234567890'),
+('444444444', '456789012'),
+('666666666', '678901234'),
+('888888888', '890123456'),
+('999998888', '012345678');
+
+INSERT INTO GRADSINPROJECTS (PrjleadSsn, prName, gradsssn, workingHours)    
+VALUES 
+('123456789', 'Dart Game', '222222222', 10),
+('123456789', 'Dart Game', '444444444', 20),
+('234567890', 'Hazine Avı', '666666666', 15),
+('456789012', 'Poetry Anthology', '888888888', 5),
+('012345678', 'Bean Cotton Experiment', '999998888', 10);
+
+INSERT INTO EMAILS (sssn, email)  
+VALUES 
+('111111111', '21COMP1013@isik.edu.tr'),
+('222222222', '21SOFT1048@isik.edu.tr'),
+('333333333', '21SOFT1016@isik.edu.tr'),
+('444444444', '21SOFT1021@isik.edu.tr'),
+('555555555', '19BMED1009@isik.edu.tr'),
+('666666666', '21COMP1011@isik.edu.tr'),
+('777777777', '19BMED1004@isik.edu.tr'),
+('888888888', '19CIVL2017@isik.edu.tr'),
+('999999999', '218ME2231@isik.edu.tr'),
+('999998888', '217CS2237@isik.edu.tr');
+
+INSERT INTO PREVDEGREES (college, degree, year, gradsssn) 
+VALUES 
+('İstanbul University', 'Bachelor', '2018', '999998888'),
+('Marmara University', 'Associate', '2019', '222222222'),
+('9 Eylül University', 'Graduate', '2017', '444444444'),
+('Ege University', 'Doctorate', '2020', '666666666'),
+('Gülhane University', 'Professional', '2016', '888888888');
+
+INSERT INTO COURSE (ects, courseName, courseCode, numHours, preReqCourseCode) 
+VALUES
+('2', 'Introduction to Programming', 'CSE101', '80', NULL),
+('5', 'Calculus II', 'MATH201', '60', 'MATH101'),
+('6', 'International Relations', 'POLS101', '70', NULL),
+('4', 'Academic English II', 'ENG112', '80', 'ENG101'),
+('7', 'Managerial Accounting', 'BUSI201', '40', 'BUSI101'),
+('8', 'Macroeconomics', 'ECON201', '120', 'ECO101'),
+('5', 'Organic Chemistry', 'CHM101', '50', NULL),
+('3', 'Turkish Republic History II', 'HIST201', '40', 'HIS101'),
+('6', 'Electromagnetism', 'PHYS201', '72', 'PHYS101'),
+('4', 'Genetics', 'BIOL201', '36', 'BIOL101'); 
+
+INSERT INTO SECTION (semester, courseCode, yearr, sectionId, quota, issn)  
+VALUES 
+('Fall2021', 'CSE101', '2021', 'CSE101.01', 50, '123456789'),
+('Fall2023', 'MATH201', '2023', 'MATH201.02', 40, '234567890'),
+('Spring2020', 'POLS101', '2020', 'POLS101.03', 60, '345678901'),
+('Fall2019', 'ENG112', '2019', 'ENG112.07', 30, '456789012'),
+('Spring2018', 'BUSI201', '2018', 'BUSI201.02', 45, '567890123'),
+('Summer2022', 'ECON201', '2022', 'ECON201.01', 55, '678901234'),
+('Summer2023', 'CHM101', '2023', 'CHEM101.04', 25, '789012345'),
+('Spring2021', 'HIST201', '2021', 'HIST201.05', 35, '890123456'),
+('Fall2020', 'PHYS201', '2020', 'PHYS201.01', 50, '901234567'),
+('Spring2022', 'BIOL201', '2022', 'BIOL201.02', 20, '012345678');
+
+INSERT INTO ENROLLMENT (sssn, issn, grade, semester, courseCode, yearr, sectionId, buildingName, roomNo, hourr, dayy)   
+VALUES 
+('111111111', '123456789', '45', 'Fall20', 'CSE101', '2021', 'CSE101.01', 'AMF', 'Z10', '7-8', 'M'),
+('222222222', '234567890', '56','Fall20', 'MATH201', '2023', 'MATH201.02', 'DMF', '414', '5-6-7','W'),
+('333333333', '345678901', '76','Spring', 'POLS101', '2020', 'POLS101.03', 'Education', '301', '9-10', 'F'),
+('444444444', '456789012', '12','Fall20', 'ENG112', '2019', 'ENG112.07', 'SFL', '101', '4-5-6-7', 'TH'),
+('555555555', '567890123', '65','Spring', 'BUSI201', '2018', 'BUSI201.02','LMF', '102', '11-12', 'TUE'),
+('666666666', '678901234', '93','Summer', 'ECON201', '2022', 'ECON201.01', 'Business', '201', '9-10',  'M'),
+('777777777', '789012345', '34','Summer', 'CHM101', '2023', 'CHEM101.04', 'Engineering', '401', '8-9', 'TUE'),
+('888888888', '890123456', '57','Spring', 'HIST201', '2021', 'HIST201.05', 'Humanities', '301', '6-7',  'F'),
+('999999999', '901234567', '100','Fall20', 'PHYS201', '2020', 'PHYS201.01', 'LAB', '322', '1-2','TUE'),
+('999998888', '012345678', '0','Spring', 'BIOL201', '2022', 'BIOL201.02', 'Science','101', '2-3-4','F');
+
+INSERT INTO TIMESLOT (hourr, dayy)  
+VALUES
+('7-8', 'M'),
+('5-6-7', 'W'),
+('9-10', 'F'),
+('4-5-6-7', 'TH'),
+('11-12', 'TUE'),
+('9-10', 'M'),
+('8-9',  'TUE'),
+('6-7', 'F'),
+('1-2', 'TUE'),
+('2-3-4', 'F');
+
+INSERT INTO CIRRUCULACOURSES (courseName, courseCode, dName, currCode)   
+VALUES 
+('Introduction to Programming', 'CSE101', 'Computer Science', '1Dcbh3FE6t2L'),
+('Calculus II', 'MATH201', 'Mathematics', 'qWtow8bfuP89'),
+('International Relations', 'POLS101', 'Political Science', 'MHdW319WbS4w'),
+('Academic English II', 'ENG112', 'English', 'GkRa2UpZTW85'),
+('Managerial Accounting', 'BUSI201', 'Business', '54S89uZinwuN'),
+('Macroeconomics', 'ECON201', 'Economics', 'I4sh2AbL2Np1'),
+('Organic Chemistry', 'CHM101', 'Chemistry', '7yKNVp4F1rlP'),
+('Turkish Republic History II', 'HIST201', 'History', '9BJb0qxfp26z'),
+('Electromagnetism', 'PHYS201', 'Physics', 'lW55L7X09aXr'),
+('Genetics', 'BIOL201', 'Biology', '4qRq2Ram6OHS');
+
+INSERT INTO EXAMSOFSECTION (semester, courseCode, yearr, sectionId, issn, examName, date)  
+VALUES 
+('Fall20', 'CSE101', '2021', 'CSE101.01', '123456789', 'Midterm I', '2021-10-01 09:30:00'),
+('Fall20', 'MATH201', '2023', 'MATH201.02', '234567890', 'Midterm II', '2023-10-20 14:45:00'),
+('Spring', 'POLS101', '2020', 'POLS101.03', '345678901', 'Final', '2020-05-13 14:00:00'),
+('Fall20', 'ENG112', '2019', 'ENG112.07', '456789012', 'Midterm I', '2019-10-15 11:00:00'),
+('Spring', 'BUSI201', '2018', 'BUSI201.02', '567890123', 'Midterm III', '2018-04-20 16:30:00'),
+('Summer', 'ECON201', '2022', 'ECON201.01', '678901234', 'Midterm I', '2022-06-20 10:30:00'),
+('Summer', 'CHM101', '2023', 'CHEM101.04', '789012345', 'Final', '2023-08-01 14:00:00'),
+('Spring', 'HIST201', '2021', 'HIST201.05', '890123456', 'Midterm I', '2021-03-15 13:30:00'),
+('Fall20', 'PHYS201', '2020', 'PHYS201.01', '901234567', 'Midterm II ', '2020-10-21 09:00:00'),
+('Spring', 'BIOL201', '2022', 'BIOL201.02', '012345678', 'Final', '2022-05-10 10:00:00');
+
+INSERT INTO QUESTIONSOFEXAM (semester, courseCode, yearr, sectionId, issn, examName, qNo, qPoins)   
+VALUES 
+('Fall20', 'CSE101', '2021', 'CSE101.01', '123456789', 'Midterm I', 3, 100),
+('Fall20', 'MATH201', '2023', 'MATH201.02', '234567890', 'Midterm II', 5, 150),
+('Spring', 'POLS101', '2020', 'POLS101.03', '345678901', 'Final', 3, 200),
+('Fall20', 'ENG112', '2019', 'ENG112.07', '456789012', 'Midterm I', 4, 100),
+('Spring', 'BUSI201', '2018', 'BUSI201.02', '567890123', 'Midterm III', 5, 150),
+('Summer', 'ECON201', '2022', 'ECON201.01', '678901234', 'Midterm I', 6, 100),
+('Summer', 'CHM101', '2023', 'CHEM101.04', '789012345', 'Final', 7, 200),
+('Spring', 'HIST201', '2021', 'HIST201.05', '890123456', 'Midterm I', 8, 100),
+('Fall20', 'PHYS201', '2020', 'PHYS201.01', '901234567', 'Midterm II', 9, 150),
+('Spring', 'BIOL201', '2022', 'BIOL201.02', '012345678', 'Final', 10, 200);
+
+
+INSERT INTO STUDENTGRADESPERQUESTION (semester, courseCode, yearr, sectionId, issn, qNo, sssn, pointsEarned)
+VALUES 
+('Fall20', 'CSE101', '2021', 'CSE101.01','123456789', 3,  '111111111', '85'),
+('Fall20', 'MATH201', '2023', 'MATH201.02','234567890', 5,  '222222222', '78'),
+('Spring', 'POLS101', '2020', 'POLS101.03','345678901', 3,  '333333333', '95'),
+('Fall20', 'ENG112', '2019', 'ENG112.07', '456789012', 4,  '444444444', '35'),
+('Spring', 'BUSI201', '2018', 'BUSI201.02','567890123', 5,  '555555555', '25'),
+('Summer', 'ECON201', '2022', 'ECON201.01','678901234', 6,  '666666666', '45'),
+('Summer', 'CHM101', '2023', 'CHEM101.04','789012345', 7,  '777777777', '100'),
+('Spring', 'HIST201', '2021', 'HIST201.05','890123456', 8,  '888888888', '87'),
+('Fall20', 'PHYS201', '2020', 'PHYS201.01','901234567', 9,  '999999999', '53'),
+('Spring', 'BIOL201', '2022', 'BIOL201.02','012345678', 10,  '999998888', '29');
+
+
+
+
+

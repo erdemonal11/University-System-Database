@@ -1,0 +1,109 @@
+1) SELECT s.studentId, s.sName, e.email, s.gradorUgrad
+   FROM STUDENT s, EMAILS e
+   WHERE s.sssn = e.sssn AND s.dName = 'Biology'
+
+2) SELECT s.studentId, s.sName, i.iname
+   FROM STUDENT s, INSTRUCTOR i
+   WHERE s.dName = 'Business' AND s.advisorSsn = i.ssn
+
+3) SELECT iname
+   FROM INSTRUCTOR
+   WHERE dName = 'Computer Science'
+ 
+4) SELECT COURSE.courseCode, COURSE.courseName, COURSE.ects
+    FROM COURSE, SECTION
+    WHERE  
+    COURSE.courseCode = SECTION.courseCode AND
+      SECTION.issn = '901234567' AND
+      SECTION.yearr = '2020' AND
+      SECTION.semester = 'Fall20'
+
+5) SELECT iname
+   FROM INSTRUCTOR
+   WHERE ssn NOT IN (SELECT issn
+                     FROM SECTION
+                     WHERE yearr = '2020' AND semester = 'Spring')
+
+6) SELECT STUDENT.sName, STUDENT.sssn
+   FROM STUDENT, ENROLLMENT
+   WHERE STUDENT.sssn = ENROLLMENT.sssn AND ENROLLMENT.courseCode = 'CSE101' AND ENROLLMENT.yearr = '2021' AND ENROLLMENT.semester = 'Fall20'
+
+7) SELECT STUDENT.sName, STUDENT.sssn 
+   FROM STUDENT
+   WHERE sssn IN (SELECT sssn
+                  FROM ENROLLMENT
+                  WHERE semester = 'Fall20' AND courseCode = 'ENG112' AND yearr = '2019' AND sectionId = 'ENG112.07' AND issn = '456789012')
+
+8) SELECT COURSE.courseCode, COURSE.courseName, COURSE.ects
+   FROM COURSE, SECTION, ENROLLMENT
+   WHERE ENROLLMENT.sssn = '333333333' AND  ENROLLMENT.semester= SECTION.semester AND ENROLLMENT.courseCode= SECTION.courseCode AND ENROLLMENT.yearr= SECTION.yearr AND ENROLLMENT.sectionId= SECTION.sectionId AND SECTION.courseCode= COURSE.courseCode 
+
+9) SELECT ENROLLMENT.courseCode, ENROLLMENT.sectionId, ENROLLMENT.dayy, ENROLLMENT.hourr
+   FROM ENROLLMENT
+   WHERE sssn = '222222222' AND semester = 'Fall20' AND yearr = '2023'
+
+10) SELECT courseCode, yearr, semester, grade
+    FROM ENROLLMENT
+    WHERE sssn = '555555555'
+    ORDER BY courseCode, yearr, semester
+
+11) SELECT  s.sName, e.courseCode, e.grade
+    FROM ENROLLMENT e, STUDENT s
+    WHERE e.semester = 'Fall20' AND e.yearr = '2019' AND e.courseCode = 'ENG112' AND s.sssn=e.sssn
+
+12) SELECT examName, SUM(pointsEarned) AS score
+	FROM STUDENTGRADESPERQUESTION s, EXAMSOFSECTION e
+	WHERE s.sssn = '333333333' AND s.sectionId = 'POLS101.03' AND s.sectionId=e.sectionId
+	GROUP BY examName
+
+13) SELECT sssn, qNo, pointsEarned
+    FROM STUDENTGRADESPERQUESTION
+    WHERE semester = 'Spring' AND courseCode = 'BIOL201' AND yearr = '2022'
+
+14)	SELECT e1.sectionId, e1.sssn, (80-(char_length(e1.hourr))) AS 'freehours'
+	FROM ENROLLMENT e1
+	WHERE e1.sssn in (SELECT s2.sssn 
+                FROM STUDENT s2, ENROLLMENT e2, SECTION sc2
+                 WHERE s2.sssn= e2.sssn AND e2.sectionId=sc2.sectionId AND sc2.sectionId='CSE101.01')
+	
+
+15) SELECT prName, startDate, endDate, subject, contrDName
+	FROM PROJECT
+	WHERE contrDName = 'Biology'
+
+16)	SELECT DISTINCT i.iname AS 'peopleworkingonproject'
+	FROM INSTRINPROJECTS n, INSTRUCTOR i
+	WHERE n.issn=i.ssn AND n.prName='Dart Game' 
+UNION
+ 	SELECT DISTINCT s.sName AS 'peopleworkingonproject'
+ 	FROM STUDENT s, GRADSINPROJECTS g
+ 	WHERE s.sssn=g.gradsssn AND prName='Dart Game'
+
+17)	SELECT issn, iname, workingHours*100 AS extraPayment
+	FROM INSTRUCTOR, INSTRINPROJECTS
+	WHERE INSTRUCTOR.ssn = INSTRINPROJECTS.issn AND prName = 'Hazine Avı'
+
+18)	SELECT SUM(extraSalary)
+FROM INSTRUCTOR
+WHERE ssn IN (
+	SELECT i.workingHours*100 AS 'extraSalary'
+	FROM INSTRINPROJECTS i
+	WHERE i.issn='123456789'
+	)
+OR ssn IN (
+	SELECT (char_length(e.hourr))*50 AS 'extraSalary'
+	FROM ENROLLMENT e
+	WHERE e.issn='123456789' AND e.hourr>10
+	)
+OR ssn IN (
+	SELECT count(g.sssn)*25 AS 'extraSalary'
+	FROM GRADSTUDENT g
+	WHERE g.advisorSsn= '123456789'
+)
+
+19)SELECT dName, AVG(baseSalary) AS avgBaseSalary
+	FROM INSTRUCTOR
+	GROUP BY dName
+
+
+
